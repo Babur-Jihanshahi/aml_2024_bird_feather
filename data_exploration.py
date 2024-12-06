@@ -26,6 +26,12 @@ plt.xlabel('Count')
 plt.ylabel('Species Name')
 plt.show()
 
+plt.figure(figsize=(15, 6))
+sns.histplot(data=train_df, x='label')
+plt.title('Distribution of Classes')
+plt.xlabel('Species Label')
+plt.ylabel('Count')
+
 sample_path = train_df['image_path'].iloc[0].lstrip('/') 
 sample_image_path = base_dir / 'train_images' / sample_path
 sample_image = tf.keras.preprocessing.image.load_img(sample_image_path)
